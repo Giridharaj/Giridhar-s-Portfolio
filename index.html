@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Giridhar Raj K — Full-Stack Developer and Computer Science graduate specializing in secure, scalable systems, quantum computing, and data engineering.">
+    <meta name="author" content="Giridhar Raj K">
+    <meta name="theme-color" content="#07070a">
+    <meta property="og:title" content="Giridhar Raj K | Full Stack Developer">
+    <meta property="og:description" content="Full-Stack Developer building secure, scalable systems with modern technologies.">
+    <meta property="og:type" content="website">
+    <title>Giridhar's Portfolio</title>
+    <link rel="Website Icon" href="portfolio_logo.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="page-loader" id="page-loader" aria-hidden="true">
+        <div class="loader-ring"></div>
+        <span class="loader-text">GR</span>
+    </div>
+
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <div class="bg-mesh" aria-hidden="true"></div>
+    <div class="bg-grain" aria-hidden="true"></div>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav id="navbar" class="navbar" aria-label="Main navigation">
+            <div class="nav-inner">
+                <a href="#" class="nav-brand" aria-label="Home">
+                    <span class="nav-logo">GR</span>
+                    <span class="nav-name">Giridhar Raj K</span>
+                </a>
+
+                <ul class="nav-links" role="list">
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button type="button" class="btn btn-resume" onclick="downloadResume()">
+                        <i class="fa-solid fa-download" aria-hidden="true"></i>
+                        <span>Resume</span>
+                    </button>
+                    <button id="menu-toggle" type="button" class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div id="mobile-nav" class="mobile-nav" aria-hidden="true">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+        <button type="button" class="btn btn-primary btn-block" onclick="downloadResume()">
+            <i class="fa-solid fa-download" aria-hidden="true"></i>
+            Download Resume
+        </button>
+    </div>
+
+    <main id="main">
+
+        <!-- HERO -->
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="container hero-grid">
+                <div class="hero-copy reveal">
+                    <div class="badge">
+                        <span class="badge-dot" aria-hidden="true"></span>
+                        Open to Full-Time &amp; Internship Opportunities
+                    </div>
+
+                    <p class="hero-greeting">Hello, I'm</p>
+                    <h1 id="hero-heading" class="hero-title">
+                        <span class="gradient-text">Giridhar Raj K</span>
+                    </h1>
+
+                    <p class="hero-role">
+                        <span id="role-text">Full-Stack Developer</span>
+                        <span class="role-cursor" aria-hidden="true">|</span>
+                    </p>
+
+                    <p class="hero-desc">
+                        Computer Science graduate passionate about building secure, scalable systems with modern technologies, quantum computing, and data engineering.
+                    </p>
+
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-primary btn-lg">
+                            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                            Get In Touch
+                        </a>
+                        <a href="#projects" class="btn btn-ghost btn-lg">
+                            See My Work
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+
+                    <div class="hero-meta">
+                        <a href="mailto:rajgiridhar03@gmail.com" class="meta-link">
+                            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                            rajgiridhar03@gmail.com
+                        </a>
+                        <a href="tel:+919344543875" class="meta-link">
+                            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                            +91 93445 43875
+                        </a>
+                    </div>
+
+                    <div class="social-row">
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="mailto:rajgiridhar03@gmail.com" class="social-link" aria-label="Email">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual reveal reveal-delay-2">
+                    <div class="hero-frame">
+                        <div class="hero-frame-glow" aria-hidden="true"></div>
+                        <img src="SEO.jpeg"
+                             alt="Portrait placeholder — replace with your professional photo"
+                             width="600"
+                             height="700"
+                             class="hero-photo"
+                             loading="eager">
+                    </div>
+                    <div class="location-card">
+                        <span class="location-flag" aria-hidden="true">🇮🇳</span>
+                        <div>
+                            <strong>Puducherry, India</strong>
+                            <span class="location-status">Available globally (remote)</span>
+                        </div>
+                    </div>
+                    <div class="hero-float-card hero-float-card--1" aria-hidden="true">
+                        <i class="fa-solid fa-code"></i>
+                        <span>Full Stack</span>
+                    </div>
+                    <div class="hero-float-card hero-float-card--2" aria-hidden="true">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Security</span>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#about" class="scroll-hint" aria-label="Scroll to about section">
+                <span>Scroll</span>
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </a>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">About Me</span>
+                    <h2 class="section-title">Building the future, one line at a time</h2>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-text reveal">
+                        <p>
+                            I'm a B.Tech graduate in Computer and Communication Engineering with hands-on experience across the full stack — from React and Node.js to Python, cloud, and cybersecurity.
+                        </p>
+                        <p>
+                            I enjoy solving complex problems, whether that's quantum-safe communication, data fragmentation in FMCG, or machine learning for healthcare research.
+                        </p>
+                        <ul class="about-highlights">
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Secure &amp; scalable web applications</li>
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Quantum computing &amp; cryptography</li>
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Data engineering &amp; analytics</li>
+                        </ul>
+                    </div>
+
+                    <div class="stats-grid">
+                        <article class="stat-card reveal reveal-delay-1">
+                            <span class="stat-value">8.12</span>
+                            <span class="stat-label">CGPA (B.Tech)</span>
+                        </article>
+                        <article class="stat-card reveal reveal-delay-2">
+                            <span class="stat-value">2+</span>
+                            <span class="stat-label">Major Projects</span>
+                        </article>
+                        <article class="stat-card reveal reveal-delay-2">
+                            <span class="stat-value">3</span>
+                            <span class="stat-label">Certifications</span>
+                        </article>
+                        <article class="stat-card reveal reveal-delay-3">
+                            <span class="stat-value">1</span>
+                            <span class="stat-label">Published Paper</span>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="section section-alt">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">Portfolio</span>
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="section-desc">Real-world applications built with modern technologies</p>
+                </div>
+
+                <div class="projects-grid">
+                    <article class="project-card reveal">
+                        <div class="project-visual project-visual--purple">
+                            <img src="Quantum.jpeg" alt="Quantum Key Distribution Framework" width="100%" height="100%">
+                            <div class="project-overlay">
+                                <span class="project-num">01</span>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <h3>Quantum Key Distribution Framework</h3>
+                            <p>Secure communication system using QKD with phase estimation protocol to protect against eavesdropping.</p>
+                            <div class="tag-list">
+                                <span class="tag">Python</span>
+                                <span class="tag">Qiskit</span>
+                                <span class="tag">SimulaQron</span>
+                            </div>
+                            <a href="#" class="project-link">
+                                View Case Study
+                                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal reveal-delay-1">
+                        <div class="project-visual project-visual--amber">
+                            <img src="Predictive Analytics Model.jpeg" alt="Predictive Analytics Model" width="100%" height="100%">
+                            <div class="project-overlay">
+                                <span class="project-num">02</span>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <h3>FMCG Data Fragmentation Analysis</h3>
+                            <p>Analysis of data silos in FMCG — challenges across analytics, supply chain, and consumer engagement.</p>
+                            <div class="tag-list">
+                                <span class="tag">MERN Stack</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">Django</span>
+                                <span class="tag">SQL</span>
+                            </div>
+                            <a href="#" class="project-link">
+                                View Project
+                                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="section-header section-header--center reveal">
+                    <span class="section-label">Expertise</span>
+                    <h2 class="section-title">Technical Arsenal</h2>
+                    <p class="section-desc">Tools and technologies I work with daily</p>
+                </div>
+
+                <div class="skills-layout">
+                    <div class="skill-group reveal">
+                        <h3 class="skill-group-title"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i> Languages &amp; Frameworks</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip"><i class="fa-brands fa-python" aria-hidden="true"></i> Python</span>
+                            <span class="skill-chip"><i class="fa-brands fa-js" aria-hidden="true"></i> JavaScript</span>
+                            <span class="skill-chip"><i class="fa-brands fa-react" aria-hidden="true"></i> React.js</span>
+                            <span class="skill-chip"><i class="fa-brands fa-node-js" aria-hidden="true"></i> Node.js</span>
+                            <span class="skill-chip"><i class="fa-brands fa-html5" aria-hidden="true"></i> HTML/CSS</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group reveal reveal-delay-1">
+                        <h3 class="skill-group-title"><i class="fa-solid fa-database" aria-hidden="true"></i> Data &amp; Cloud</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip"><i class="fa-solid fa-database" aria-hidden="true"></i> PostgreSQL</span>
+                            <span class="skill-chip"><i class="fa-solid fa-leaf" aria-hidden="true"></i> MongoDB</span>
+                            <span class="skill-chip"><i class="fa-brands fa-aws" aria-hidden="true"></i> AWS</span>
+                            <span class="skill-chip"><i class="fa-solid fa-chart-simple" aria-hidden="true"></i> Power BI</span>
+                            <span class="skill-chip"><i class="fa-solid fa-server" aria-hidden="true"></i> SQL</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group reveal reveal-delay-2">
+                        <h3 class="skill-group-title"><i class="fa-solid fa-toolbox" aria-hidden="true"></i> Tools &amp; Security</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip"><i class="fa-brands fa-git-alt" aria-hidden="true"></i> Git</span>
+                            <span class="skill-chip"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Cybersecurity</span>
+                            <span class="skill-chip"><i class="fa-solid fa-atom" aria-hidden="true"></i> Qiskit</span>
+                            <span class="skill-chip"><i class="fa-brands fa-docker" aria-hidden="true"></i> Docker</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience" class="section section-alt">
+            <div class="container">
+                <div class="experience-grid">
+                    <div class="reveal">
+                        <span class="section-label">Career</span>
+                        <h2 class="section-title">Experience</h2>
+                        <div class="timeline">
+                            <article class="timeline-item">
+                                <div class="timeline-header">
+                                    <div>
+                                        <h3>Full Stack Web Development Intern</h3>
+                                        <span class="timeline-org">Unified Mentor</span>
+                                    </div>
+                                    <time datetime="2024">2024</time>
+                                </div>
+                                <ul>
+                                    <li>Developed responsive web applications using React.js, Node.js &amp; MongoDB</li>
+                                    <li>Gained hands-on experience in the full-stack development lifecycle</li>
+                                </ul>
+                            </article>
+                            <article class="timeline-item">
+                                <div class="timeline-header">
+                                    <div>
+                                        <h3>Data Analysis Foundations</h3>
+                                        <span class="timeline-org">LinkedIn Learning</span>
+                                    </div>
+                                    <time datetime="2023">2023</time>
+                                </div>
+                                <ul>
+                                    <li>Mastered SQL, Python, and Power BI for data-driven insights</li>
+                                </ul>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="reveal reveal-delay-1">
+                        <span class="section-label">Academics</span>
+                        <h2 class="section-title">Education</h2>
+                        <div class="edu-card">
+                            <div class="edu-card-top">
+                                <div>
+                                    <h3>B.Tech in Computer and Communication Engineering</h3>
+                                    <p>Sri Manakula Vinayagar Engineering College, Puducherry</p>
+                                </div>
+                                <div class="edu-score">
+                                    <span class="edu-cgpa">8.12 / 10.0</span>
+                                    <time datetime="2021/2025">2021 – 2025</time>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="certs-block">
+                            <h3 class="certs-title">Certifications &amp; Achievements</h3>
+                            <div class="cert-list">
+                                <div class="cert-item">
+                                    <span class="cert-icon"><i class="fa-brands fa-aws" aria-hidden="true"></i></span>
+                                    <div>
+                                        <strong>AWS Certified Cloud Practitioner</strong>
+                                        <span>Amazon Web Services</span>
+                                    </div>
+                                </div>
+                                <div class="cert-item">
+                                    <span class="cert-icon"><i class="fa-brands fa-python" aria-hidden="true"></i></span>
+                                    <div>
+                                        <strong>Python Full Stack Development</strong>
+                                        <span>EduSkills Academy</span>
+                                    </div>
+                                </div>
+                                <div class="cert-item">
+                                    <span class="cert-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
+                                    <div>
+                                        <strong>Palo Alto PCCET</strong>
+                                        <span>Cybersecurity Technician</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="publication-card">
+                                <h4><i class="fa-solid fa-book-open" aria-hidden="true"></i> Publication</h4>
+                                <p>"Preliminary analysis test in diabetics using machine learning"</p>
+                                <span class="pub-meta">IJRAR • 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="contact-wrapper reveal">
+                    <div class="contact-intro">
+                        <span class="section-label">Get in touch</span>
+                        <h2 class="section-title">Let's build something exceptional together</h2>
+                        <p>I'm currently seeking full-time opportunities in software development and data engineering.</p>
+                    </div>
+
+                    <div class="contact-cards">
+                        <a href="mailto:rajgiridhar03@gmail.com" class="contact-card">
+                            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                            <span class="contact-card-label"><b>Email</b></span>
+                            <span class="contact-card-value">rajgiridhar03@gmail.com</span>
+                        </a>
+                        <a href="tel:+919344543875" class="contact-card">
+                            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                            <span class="contact-card-label"><b>Phone</b></span>
+                            <span class="contact-card-value">+91 93445 43875</span>
+                        </a>
+                        <div class="contact-card contact-card--static">
+                            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                            <span class="contact-card-label"><b>Location</b></span>
+                            <span class="contact-card-value">Puducherry, India</span>
+                        </div>
+                    </div>
+
+                    <a href="mailto:rajgiridhar03@gmail.com" class="btn btn-primary btn-lg btn-center">
+                        <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                        Send me an email
+                    </a>
+                    <br>
+                    <br>
+                    <div class="social-row social-row--center">
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="tel:+919344543875" class="social-link" aria-label="Phone">
+                            <i class="fa-solid fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <span class="nav-logo">GR</span>
+                <p>Giridhar Raj K</p>
+            </div>
+            <p class="footer-copy">&copy; <span id="year"></span> Giridhar Raj K. Built with passion and precision.</p>
+            <button type="button" id="back-to-top" class="back-to-top" aria-label="Back to top">
+                <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+            </button>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
