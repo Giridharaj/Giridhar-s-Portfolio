@@ -2,6 +2,7 @@
     'use strict';
 
     const RESUME_PATH = "Giridhar's Resume.pdf";
+    const RESUME_FILENAME="Giridhar's Resume.pdf";
     const ROLES = [
         'Full-Stack Developer',
         'Data Engineer',
@@ -32,11 +33,12 @@
     let isDeleting = false;
 
     function downloadResume() {
+        const filename="Giridhar's Resume.pdf"
         const link = document.createElement('a');
-        link.href = encodeURI(RESUME_PATH);
-        link.download = '';
+        link.href = encodeURI("Giridhar's Resume.pdf");
+        link.download = "Giridhar'sResume.pdf";
         link.target = '_blank';
-        link.rel = 'noopener noreferrer';
+        link.style.display='none';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
