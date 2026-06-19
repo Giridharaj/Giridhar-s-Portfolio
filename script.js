@@ -17,6 +17,15 @@
     const backToTop = document.getElementById('back-to-top');
     const roleText = document.getElementById('role-text');
     const yearEl = document.getElementById('year');
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+    const themeColorMeta = document.getElementById('theme-color-meta');
+
+    const THEME_KEY = 'portfolio-theme';
+    const THEME_COLORS = {
+        dark: '#0c1222',
+        light: '#f4f7fb'
+    };
 
     let roleIndex = 0;
     let roleCharIndex = 0;
@@ -46,6 +55,77 @@
 
     function initYear() {
         if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+    }
+
+    function getStoredTheme() {
+        try {
+            return localStorage.getItem(THEME_KEY);
+        } catch (e) {
+            return null;
+        }
+    }
+
+    function setStoredTheme(theme) {
+        try {
+            localStorage.setItem(THEME_KEY, theme);
+        } catch (e) {
+            /* ignore storage errors */
+        }
+    }
+
+    function getPreferredTheme() {
+        const stored = getStoredTheme();
+        if (stored === 'light' || stored === 'dark') return stored;
+        return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    }
+
+    function updateThemeToggleUI(theme) {
+        const isDark = theme === 'dark';
+        const label = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+        const mobileLabel = isDark ? 'Light mode' : 'Dark mode';
+
+        [themeToggle, themeToggleMobile].forEach(function (btn) {
+            if (!btn) return;
+            btn.setAttribute('aria-label', label);
+            btn.setAttribute('title', label);
+        });
+
+        if (themeToggleMobile) {
+            const labelEl = themeToggleMobile.querySelector('.theme-toggle-label');
+            if (labelEl) labelEl.textContent = mobileLabel;
+        }
+
+        if (themeColorMeta) {
+            themeColorMeta.setAttribute('content', THEME_COLORS[theme]);
+        }
+    }
+
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        updateThemeToggleUI(theme);
+    }
+
+    function toggleTheme() {
+        const current = document.documentElement.getAttribute('data-theme') || 'dark';
+        const next = current === 'dark' ? 'light' : 'dark';
+        applyTheme(next);
+        setStoredTheme(next);
+    }
+
+    function initTheme() {
+        applyTheme(getPreferredTheme());
+
+        if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+        if (themeToggleMobile) themeToggleMobile.addEventListener('click', function () {
+            toggleTheme();
+            closeMobileMenu();
+        });
+
+        window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function (e) {
+            if (!getStoredTheme()) {
+                applyTheme(e.matches ? 'light' : 'dark');
+            }
+        });
     }
 
     function typeRoles() {
@@ -197,6 +277,7 @@
     window.addEventListener('resize', closeMobileMenu);
 
     initPageLoader();
+    initTheme();
     initYear();
     typeRoles();
     updateNavbar();

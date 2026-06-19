@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio of Giridhar Raj K — Full-Stack Developer and Computer Science graduate specializing in secure, scalable systems, quantum computing, and data engineering.">
     <meta name="author" content="Giridhar Raj K">
-    <meta name="theme-color" content="#07070a">
+    <meta name="theme-color" content="#0c1222" id="theme-color-meta">
     <meta property="og:title" content="Giridhar Raj K | Full Stack Developer">
     <meta property="og:description" content="Full-Stack Developer building secure, scalable systems with modern technologies.">
     <meta property="og:type" content="website">
@@ -15,6 +15,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <script>
+        (function () {
+            try {
+                var stored = localStorage.getItem('portfolio-theme');
+                var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) { /* ignore */ }
+        })();
+    </script>
 </head>
 <body>
 
@@ -46,6 +55,10 @@
                 </ul>
 
                 <div class="nav-actions">
+                    <button id="theme-toggle" type="button" class="theme-toggle" aria-label="Switch to light mode" title="Toggle theme">
+                        <i class="fa-solid fa-sun theme-icon theme-icon--light" aria-hidden="true"></i>
+                        <i class="fa-solid fa-moon theme-icon theme-icon--dark" aria-hidden="true"></i>
+                    </button>
                     <button type="button" class="btn btn-resume" onclick="downloadResume()">
                         <i class="fa-solid fa-download" aria-hidden="true"></i>
                         <span>Resume</span>
@@ -66,6 +79,11 @@
         <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
+        <button id="theme-toggle-mobile" type="button" class="theme-toggle theme-toggle--mobile" aria-label="Switch to light mode">
+            <i class="fa-solid fa-sun theme-icon theme-icon--light" aria-hidden="true"></i>
+            <i class="fa-solid fa-moon theme-icon theme-icon--dark" aria-hidden="true"></i>
+            <span class="theme-toggle-label">Light mode</span>
+        </button>
         <button type="button" class="btn btn-primary btn-block" onclick="downloadResume()">
             <i class="fa-solid fa-download" aria-hidden="true"></i>
             Download Resume
@@ -120,10 +138,10 @@
                     </div>
 
                     <div class="social-row">
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/in/giridhar-raj-k" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
                             <i class="fa-brands fa-linkedin-in"></i>
                         </a>
-                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                        <a href="https://github.com/Giridhar-s-Portfolio" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
                             <i class="fa-brands fa-github"></i>
                         </a>
                         <a href="mailto:rajgiridhar03@gmail.com" class="social-link" aria-label="Email">
@@ -220,13 +238,12 @@
                     <p class="section-desc">Real-world applications built with modern technologies</p>
                 </div>
 
-                <div class="projects-grid">
-                    <article class="project-card reveal">
+                <div class="projects-bento">
+                    <article class="project-card project-card--featured reveal">
                         <div class="project-visual project-visual--purple">
-                            <img src="Quantum.jpeg" alt="Quantum Key Distribution Framework" width="100%" height="100%">
-                            <div class="project-overlay">
-                                <span class="project-num">01</span>
-                            </div>
+                            <img src="Quantum.jpeg" alt="Quantum Key Distribution Framework" width="600" height="400" loading="lazy">
+                            <span class="project-badge">Featured</span>
+                            <span class="project-num">01</span>
                         </div>
                         <div class="project-body">
                             <h3>Quantum Key Distribution Framework</h3>
@@ -243,12 +260,10 @@
                         </div>
                     </article>
 
-                    <article class="project-card reveal reveal-delay-1">
+                    <article class="project-card project-card--compact reveal reveal-delay-1">
                         <div class="project-visual project-visual--amber">
-                            <img src="Predictive Analytics Model.jpeg" alt="Predictive Analytics Model" width="100%" height="100%">
-                            <div class="project-overlay">
-                                <span class="project-num">02</span>
-                            </div>
+                            <img src="Predictive Analytics Model.jpeg" alt="FMCG Data Fragmentation Analysis" width="600" height="400" loading="lazy">
+                            <span class="project-num">02</span>
                         </div>
                         <div class="project-body">
                             <h3>FMCG Data Fragmentation Analysis</h3>
@@ -438,10 +453,10 @@
                     <br>
                     <br>
                     <div class="social-row social-row--center">
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/in/giridhar-raj-k" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
                             <i class="fa-brands fa-linkedin-in"></i>
                         </a>
-                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                        <a href="https://github.com/Giridhar-s-Portfolio" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
                             <i class="fa-brands fa-github"></i>
                         </a>
                         <a href="tel:+919344543875" class="social-link" aria-label="Phone">
@@ -455,15 +470,42 @@
     </main>
 
     <footer class="footer">
-        <div class="container footer-inner">
-            <div class="footer-brand">
-                <span class="nav-logo">GR</span>
-                <p>Giridhar Raj K</p>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="nav-logo">GR</span>
+                    <div>
+                        <p class="footer-name">Giridhar Raj K</p>
+                        <p class="footer-tagline">Full-Stack Developer · Puducherry, India</p>
+                    </div>
+                </div>
+
+                <nav class="footer-links" aria-label="Footer contact links">
+                    <a href="https://www.linkedin.com/in/giridhar-raj-k" target="_blank" rel="noopener noreferrer" class="footer-link">
+                        <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/Giridhar-s-Portfolio" target="_blank" rel="noopener noreferrer" class="footer-link">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="tel:+919344543875" class="footer-link">
+                        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                        <span>+91 93445 43875</span>
+                    </a>
+                    <a href="mailto:rajgiridhar03@gmail.com" class="footer-link">
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                        <span>rajgiridhar03@gmail.com</span>
+                    </a>
+                </nav>
             </div>
-            <p class="footer-copy">&copy; <span id="year"></span> Giridhar Raj K. Built with passion and precision.</p>
-            <button type="button" id="back-to-top" class="back-to-top" aria-label="Back to top">
-                <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
-            </button>
+
+            <div class="footer-bottom">
+                <p class="footer-copy">&copy; <span id="year"></span> Giridhar Raj K. Built with passion and precision.</p>
+                <button type="button" id="back-to-top" class="back-to-top" aria-label="Back to top">
+                    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+                </button>
+            </div>
         </div>
     </footer>
 
