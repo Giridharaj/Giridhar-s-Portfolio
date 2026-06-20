@@ -4,10 +4,10 @@
     const RESUME_PATH = "Giridhar's Resume.pdf";
     const RESUME_FILENAME="Giridhar's Resume.pdf";
     const ROLES = [
+        'Software Engineer Professional',
         'Full-Stack Developer',
-        'Data Engineer',
-        'Cybersecurity Enthusiast',
-        'Quantum Computing Explorer'
+        'Data Analyst',
+        'Quantum Computing Enthusiast'
     ];
 
     const menuToggle = document.getElementById('menu-toggle');
